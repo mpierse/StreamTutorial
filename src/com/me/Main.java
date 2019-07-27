@@ -4,15 +4,15 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Streams exapmle = new Streams();
+        Streams example = new Streams();
 
         // A messy OOP solution
-        exapmle.messyEfficientMethod();
+        example.messyEfficientMethod();
 
         //A Long OOP solution
-        exapmle.cleanInefficientMethod();
+        example.cleanInefficientMethod();
 
         //A sexy functional streaming solution
-        exapmle.cleanEfficentStream();
+        example.cleanEfficentStream();
     }
 }

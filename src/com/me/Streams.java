@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//Shamelessly inspired by https://dzone.com/articles/why-we-need-lambda-expressions-0
 public class Streams {
 
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
 
-    public void messyEfficientMethod(){
+    public void messyMethod(){
         for (int number : numbers) {
             if (number % 2 == 0) {
                 System.out.println("Even: " + number);
@@ -23,7 +22,7 @@ public class Streams {
         }
     }
 
-    public void cleanInefficientMethod(){
+    public void longMethod(){
         List<Integer> l1 = new ArrayList<Integer>();
         for (int n : numbers) {
             if (isEven(n)){
@@ -49,14 +48,14 @@ public class Streams {
     }
 
     public void cleanEfficentStream(){
-        System.out.println(
+        System.out.println("Over Five :" +
                 numbers.stream()
                         .filter((n) -> isEven(n))
                         .peek((n)-> System.out.println("Even: " + n))
                         .map(this::doubleIt)
                         .peek((n)-> System.out.println("Double :" + n))
                         .filter(this::isGreaterThan5)
-                        .findFirst()
+                        .findFirst().get()
         );
     }
 

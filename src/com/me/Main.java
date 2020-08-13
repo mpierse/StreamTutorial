@@ -4,15 +4,28 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Streams example = new Streams();
+        Streams streamsSample = new Streams();
+        Predicates predicatesSample = new Predicates();
+
+        //Infelxible odds filtering method
+        //System.out.println(predicatesSample.removeOdds());
+
+        //Infelxible odds filtering method with Streams
+        //System.out.println(predicatesSample.removeOddsWithStream());
+
+        //Flexible filtering method to filter anything!
+        //System.out.println(predicatesSample.removeAnything(n -> n%2 != 0));
+
+
+
 
         // A messy OOP solution
-        example.messyEfficientMethod();
+        //streamsSample.messyMethod();
 
-        //A Long OOP solution
-        example.cleanInefficientMethod();
+        //A long OOP solution
+        //streamsSample.longMethod();
 
         //A sexy functional streaming solution
-        example.cleanEfficentStream();
+        streamsSample.cleanEfficentStream();
     }
 }

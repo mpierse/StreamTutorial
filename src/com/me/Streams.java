@@ -11,11 +11,11 @@ public class Streams {
     public void messyMethod(){
         for (int number : numbers) {
             if (number % 2 == 0) {
-                System.out.println("Even: " + number);
+                System.out.println("Even : " + number);
                 int n2 = number * 2;
-                System.out.println("Double: " + n2);
+                System.out.println("Double : " + n2);
                 if (n2 > 5) {
-                    System.out.println("Over Five: " + n2);
+                    System.out.println("Over Five : " + n2);
                     //break;
                 }
             }
@@ -27,13 +27,13 @@ public class Streams {
         for (int n : numbers) {
             if (isEven(n)){
                 l1.add(n);
-                System.out.println("Even: " + n);
+                System.out.println("Even : " + n);
             }
         }
 
         List<Integer> l2 = new ArrayList<Integer>();
         for (int n : l1) {
-            System.out.println("Double: " + n);
+            System.out.println("Double : " + n);
             l2.add(doubleIt(n));
         }
 
@@ -41,19 +41,19 @@ public class Streams {
         for (int n : l2) {
             if (isGreaterThan5(n)) {
                 l3.add(n);
-                System.out.println("Over Five: " + n);
+                System.out.println("Over Five : " + n);
                 break;
             }
             }
     }
 
     public void cleanEfficentStream(){
-        System.out.println("Over Five :" +
+        System.out.println("Over Five : " +
                 numbers.stream()
                         .filter((n) -> isEven(n))
-                        .peek((n)-> System.out.println("Even: " + n))
+                        .peek((n)-> System.out.println("Even : " + n))
                         .map(this::doubleIt)
-                        .peek((n)-> System.out.println("Double :" + n))
+                        .peek((n)-> System.out.println("Double : " + n))
                         .filter(this::isGreaterThan5)
                         .findFirst().get()
         );
